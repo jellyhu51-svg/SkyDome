@@ -284,7 +284,7 @@ function showStoryStage(){
  <button onclick="finishStory()">跳过剧情</button>
  </div>`;
 }
-function finishStory(){
+function finishStory(){  state.crystal += 100;   // 强制解锁剧情后的关卡  state.unlocked["1-1"] = true;   if(state.stage && state.stage.unlock){    state.unlocked[state.stage.unlock] = true;  }   saveGame();  updateTop();   alert("剧情完成！已解锁 1-1 初次接触。");   showPage("battle");  renderStages(); }{
  state.crystal += 100;
  if(state.stage && state.stage.unlock) state.unlocked[state.stage.unlock] = true;
  saveGame();
